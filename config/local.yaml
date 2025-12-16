@@ -1,4 +1,0 @@
-env:"dev"
-storage_path:"Storage/storage.db"
-http_server:
-  address:"localhost:8082"

@@ -1,0 +1,1 @@
+Write-Host "This script has been moved to /legacy/setup-db.ps1 and is not used in the minimal project layout."
