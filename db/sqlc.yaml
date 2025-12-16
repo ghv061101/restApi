@@ -1,7 +1,8 @@
 version: "1"
 packages:
   - name: "db"
-    path: "internal/repository"
-    queries: "db/queries"
-    schema: "db/migrations"
+    # path is relative to repository root; when config is inside db/, make it go up one level
+    path: "../internal/repository"
+    queries: "queries"
+    schema: "migrations"
     engine: "postgresql"

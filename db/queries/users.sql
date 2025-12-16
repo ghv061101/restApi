@@ -1,5 +1,5 @@
 -- name: CreateUser :one
-INSERT INTO users (name, dob) VALUES (:name, :dob) RETURNING id, name, dob;
+INSERT INTO users (name, dob) VALUES ($1, $2) RETURNING id, name, dob;
 
 -- name: GetUserByID :one
 SELECT id, name, dob FROM users WHERE id = $1;
@@ -8,7 +8,7 @@ SELECT id, name, dob FROM users WHERE id = $1;
 SELECT id, name, dob FROM users ORDER BY id;
 
 -- name: UpdateUser :one
-UPDATE users SET name = :name, dob = :dob WHERE id = :id RETURNING id, name, dob;
+UPDATE users SET name = $1, dob = $2 WHERE id = $3 RETURNING id, name, dob;
 
 -- name: DeleteUser :exec
 DELETE FROM users WHERE id = $1;
